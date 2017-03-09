@@ -1,0 +1,39 @@
+g++ -std=c++0x -m64 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -O3  -DNoRepository -ftemplate-depth-100 -I/home/matteo/OpenFOAM/ThirdParty-4.0/tecio/tecsrc/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/lagrangian/basic/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/finiteVolume/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/dynamicMesh/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/meshTools/lnInclude -IlnInclude -I. -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/OSspecific/POSIX/lnInclude   -fPIC -c vtkMesh.C -o Make/linux64GccDPInt32Opt/vtkMesh.o
+g++ -std=c++0x -m64 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=32 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -O3  -DNoRepository -ftemplate-depth-100 -I/home/matteo/OpenFOAM/ThirdParty-4.0/tecio/tecsrc/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/lagrangian/basic/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/finiteVolume/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/dynamicMesh/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/meshTools/lnInclude -IlnInclude -I. -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude -I/home/matteo/OpenFOAM/OpenFOAM-4.0/src/OSspecific/POSIX/lnInclude   -fPIC -c foamToTecplot360.C -o Make/linux64GccDPInt32Opt/foamToTecplot360.o
+In file included from tecplotWriterTemplates.C:29:0,
+                 from tecplotWriter.H:170,
+                 from foamToTecplot360.C:87:
+/home/matteo/OpenFOAM/ThirdParty-4.0/tecio/tecsrc/lnInclude/GLOBAL.h:5038:46: warning: use of old-style cast [-Wold-style-cast]
+/home/matteo/OpenFOAM/ThirdParty-4.0/tecio/tecsrc/lnInclude/GLOBAL.h:5057:41: warning: use of old-style cast [-Wold-style-cast]
+/home/matteo/OpenFOAM/ThirdParty-4.0/tecio/tecsrc/lnInclude/GLOBAL.h:5071:47: warning: use of old-style cast [-Wold-style-cast]
+/home/matteo/OpenFOAM/ThirdParty-4.0/tecio/tecsrc/lnInclude/GLOBAL.h:5085:47: warning: use of old-style cast [-Wold-style-cast]
+In file included from foamToTecplot360.C:85:0:
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>; typename GeoField::Mesh = Foam::fvMesh]’
+foamToTecplot360.C:348:73:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<double, Foam::fvPatchField, Foam::volMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh>; typename GeoField::Mesh = Foam::fvMesh]’
+foamToTecplot360.C:352:73:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<Foam::Vector<double>, Foam::fvPatchField, Foam::volMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<Foam::SphericalTensor<double>, Foam::fvPatchField, Foam::volMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<Foam::SphericalTensor<double>, Foam::fvPatchField, Foam::volMesh>; typename GeoField::Mesh = Foam::fvMesh]’
+foamToTecplot360.C:356:79:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<Foam::SphericalTensor<double>, Foam::fvPatchField, Foam::volMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<Foam::SymmTensor<double>, Foam::fvPatchField, Foam::volMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<Foam::SymmTensor<double>, Foam::fvPatchField, Foam::volMesh>; typename GeoField::Mesh = Foam::fvMesh]’
+foamToTecplot360.C:360:77:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<Foam::SymmTensor<double>, Foam::fvPatchField, Foam::volMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<Foam::Tensor<double>, Foam::fvPatchField, Foam::volMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<Foam::Tensor<double>, Foam::fvPatchField, Foam::volMesh>; typename GeoField::Mesh = Foam::fvMesh]’
+foamToTecplot360.C:364:73:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<Foam::Tensor<double>, Foam::fvPatchField, Foam::volMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<double, Foam::pointPatchField, Foam::pointMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<double, Foam::pointPatchField, Foam::pointMesh>; typename GeoField::Mesh = Foam::pointMesh]’
+foamToTecplot360.C:422:13:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<double, Foam::pointPatchField, Foam::pointMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+vtkMesh.H: In instantiation of ‘Foam::tmp<T> Foam::vtkMesh::interpolate(const GeoField&) const [with GeoField = Foam::GeometricField<Foam::Vector<double>, Foam::pointPatchField, Foam::pointMesh>]’:
+readFields.C:57:13:   required from ‘void Foam::readFields(const Foam::vtkMesh&, const typename GeoField::Mesh&, const Foam::IOobjectList&, const Foam::HashSet<>&, Foam::PtrList<T>&) [with GeoField = Foam::GeometricField<Foam::Vector<double>, Foam::pointPatchField, Foam::pointMesh>; typename GeoField::Mesh = Foam::pointMesh]’
+foamToTecplot360.C:432:13:   required from here
+vtkMesh.H:159:21: error: passing ‘const Foam::GeometricField<Foam::Vector<double>, Foam::pointPatchField, Foam::pointMesh>’ as ‘this’ argument of ‘virtual void Foam::regIOobject::rename(const Foam::word&)’ discards qualifiers [-fpermissive]
+make: *** [Make/linux64GccDPInt32Opt/foamToTecplot360.o] Error 1
