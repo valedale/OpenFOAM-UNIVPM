@@ -1,2 +1,0 @@
-Nome linea
-noise.dat
