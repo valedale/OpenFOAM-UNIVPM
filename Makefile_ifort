@@ -1,0 +1,43 @@
+###-Makefile-###
+#
+#######################################################################################
+# INTEL
+#
+FORTRAN=ifort
+FMPI=mpiifort
+FLAGS=-O3 -no-prec-div -DvectorMachine  -fp-model precise -fp-speculation=safe -xHOST
+#
+#######################################################################################
+#
+PROGRAM=mdft_new
+OBJDIR=ObjO
+#
+SRCS1=$(wildcard ./src/*.F90)
+SRCS2=$(wildcard ./src/*.f90)
+#
+OBJ1 = $(addprefix $(OBJDIR)/, $(notdir $(SRCS1:.F90=.o)))
+OBJ2 = $(addprefix $(OBJDIR)/, $(notdir $(SRCS2:.f90=.o)))
+#
+#######################################################################################
+#
+exe:  $(OBJ1) $(OBJ2)
+#
+	$(FMPI) $(FLAGS) -o $(PROGRAM).out $(OBJ1) $(OBJ2)
+#
+$(OBJDIR)/%.o: ./src/%.F90
+	$(FMPI) -c $(FLAGS) $< -o $@
+
+$(OBJDIR)/%.o: ./src/%.f90
+	$(FORTRAN) -c $(FLAGS) $< -o $@
+#
+#######################################################################################
+#
+clean:
+	rm $(OBJDIR)/$.*.o
+
+cleanall:
+	rm $(PROGRAM).out
+	rm $(OBJDIR)/$.*.o
+#
+#######################################################################################
+###-End-Makefile-### 
